@@ -1,0 +1,25 @@
+<div class="login-container">
+	<h2 class="center mb-2rem">Login to The Wikipedia Word Guesser</h2>
+
+	<form method="post" action="/auth/login">
+		<div class="form-group">
+			<label for="email">Email</label>
+			<input type="text" id="email" name="email" required>
+		</div>
+
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" required>
+		</div>
+
+		{{#if messages.error}}
+			<div class="alert-danger">
+				{{#each messages.error}}
+					<div>{{this}}</div>
+				{{/each}}
+			</div>
+		{{/if}}
+
+		<button type="submit" class="btn green expand">Login</button>
+	</form>
+</div>

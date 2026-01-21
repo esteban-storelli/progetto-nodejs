@@ -1,0 +1,12 @@
+CREATE SCHEMA es_node;
+USE es_node;
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(100),
+    email VARCHAR(255),
+    password_hash CHAR(60),
+    high_score INT,
+    number_of_plays INT,
+    total_points INT
+);

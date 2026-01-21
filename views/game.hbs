@@ -1,0 +1,21 @@
+<div class="cards-container">
+	<div class="card">
+		<div class="card-title">{{article1.title}}</div>
+		<div>{{article1.first_paragraph}}</div>
+		<div>Word Count: {{article1.word_count}}</div>
+	</div>
+
+	<div class="card">
+		<div class="card-title">{{article2.title}}</div>
+		<div>{{article2.first_paragraph}}</div>
+
+		<form class="btn-container" action="/guess" method="post">
+			<button class="btn green" type="submit" name="button" value="higher">Higher</button>
+			<button class="btn red" type="submit" name="button" value="lower">Lower</button>
+		</form>
+	</div>
+</div>
+
+<div class="score-box">
+	Score: {{score}}
+</div>

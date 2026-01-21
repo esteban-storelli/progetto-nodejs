@@ -1,0 +1,14 @@
+<div class="center title mb-2rem">{{user.username}}'s Profile</div>
+
+<div class="center score-text">High Score: {{user.high_score}}</div>
+<div class="center score-text">Number Of Plays: {{user.number_of_plays}}</div>
+<div class="center score-text">Total Points: {{user.total_points}}</div>
+
+<div class="center score-text">
+	Average Score:
+	{{#if average_score}}
+		{{average_score}}
+	{{else}}
+		N/A
+	{{/if}}
+</div>
