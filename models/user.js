@@ -12,6 +12,7 @@ class User extends Model {
 	}
 }
 
+// Definizione proprietà + export
 module.exports = (sequelize) => {
 	User.init(
 		{

@@ -23,9 +23,11 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
+	// Logica per la registrazione
 	let { email, username, password, confirm } = req.body;
 
 	if (!email || !username || !password || !confirm) {
+		// Flash per gli errori
 		req.flash("error", "Please fill out all fields.");
 		return res.redirect("/auth/register");
 	}
@@ -62,6 +64,7 @@ router.post("/register", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
+	// Logica per login
 	let { email, password } = req.body;
 
 	let user = await User.findOne({ where: { email } });
@@ -90,6 +93,7 @@ router.get("/logout", (req, res) => {
 	});
 });
 
+// ensureAuth = bisogna essere autenticati...
 router.get("/profile", ensureAuth, (req, res) => {
 	res.render("profile", {
 		layout: "main",
@@ -98,6 +102,7 @@ router.get("/profile", ensureAuth, (req, res) => {
 	 });
 });
 
+// ...Altrimenti porta alla pagina di login (configurata qui)
 function ensureAuth(req, res, next) {
 	if (!req.user) {
 		return res.redirect("/auth/login");

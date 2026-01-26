@@ -1,5 +1,6 @@
 const { Sequelize } = require("sequelize");
 
+// Istanzia Sequelize
 const sequelize = new Sequelize(
 	process.env.DB_NAME,
 	process.env.DB_USER,
@@ -12,15 +13,18 @@ const sequelize = new Sequelize(
 	}
 );
 
-(async () => {
-	try {
-		await sequelize.sync({ alter: true });
-		console.log("Database synced!");
-	} catch (err) {
-		console.error("DB sync error:", err);
-	}
-})();
+// Sincornizza tabelle e le modifica se differenti, non ottimale in production
 
+// (async () => {
+// 	try {
+// 		await sequelize.sync({ alter: true });
+// 		console.log("Database synced!");
+// 	} catch (err) {
+// 		console.error("DB sync error:", err);
+// 	}
+// })();
+
+// Controlla se riesce a connettersi
 (async () => {
 	try {
 		await sequelize.authenticate();

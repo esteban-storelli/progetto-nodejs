@@ -2,8 +2,8 @@ class Article {
 	constructor(title, body) {
 		this.title = title;
 		this.body = body;
-		this.word_count = this._calculateWordCount();
-		this.first_paragraph = this._getFirstParagraph();
+		this.word_count = this.calculateWordCount();
+		this.first_paragraph = this.getFirstParagraph();
 	}
 
 	calculateWordCount() {
